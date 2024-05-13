@@ -1,3 +1,4 @@
+// tslint:disable-next-line: no-unused-variable
 import { modelList, loraList } from '../constant'
 import { v4 as uuidv4 } from 'uuid'
 import { fixedPrompt, sellingImageDynamicPrompt, SellingImageDynamicPromptType, auctionImageDynamicPrompt, AuctionImageDynamicPromptType } from '../constant'
@@ -5,8 +6,8 @@ import { fixedPrompt, sellingImageDynamicPrompt, SellingImageDynamicPromptType, 
 
 export const getAuctionFixedImagePrompt = (): string => {
     let prompt = fixedPrompt;
-    
-    Object.keys(auctionImageDynamicPrompt).forEach((key: string, idx: number) => {
+
+    Object.keys(auctionImageDynamicPrompt).forEach((key: string) => {
         const eachPrompt = auctionImageDynamicPrompt[key as keyof AuctionImageDynamicPromptType];
         const randomIndex = Math.floor(Math.random() * eachPrompt.length);
         prompt += ", " + eachPrompt[randomIndex]
@@ -18,8 +19,8 @@ export const getAuctionFixedImagePrompt = (): string => {
 
 export const getSellingFixedImagePrompt = (): string => {
     let prompt = fixedPrompt;
-    
-    Object.keys(sellingImageDynamicPrompt).forEach((key: string, idx: number) => {
+
+    Object.keys(sellingImageDynamicPrompt).forEach((key: string) => {
         const eachPrompt = sellingImageDynamicPrompt[key as keyof SellingImageDynamicPromptType];
         const randomIndex = Math.floor(Math.random() * eachPrompt.length);
         prompt += ", " + eachPrompt[randomIndex]

@@ -3,14 +3,13 @@ import Header from '../components/Header'
 import ImageUploading, { ImageListType } from "react-images-uploading";
 import classNames from 'classnames'
 import { getUUID } from "../utils/utils";
-import { OpenAI } from "openai";
 
 
 function Regenerate() {
 
 
     const [images, setImages] = React.useState([]);
-    const [resultImage, setResultImage] = useState<string>('');
+    const [resultImage,] = useState<string>('');
     const maxNumber = 1;
     const [prompt, setPrompt] = useState<string>("");
     const [isGenerating, setIsGenerating] = useState<boolean>(false);
@@ -77,10 +76,8 @@ function Regenerate() {
                     >
                         {({
                             imageList,
-                            onImageUpload,
                             onImageRemoveAll,
                             onImageUpdate,
-                            onImageRemove,
                             isDragging,
                             dragProps
                         }) => (
@@ -93,7 +90,7 @@ function Regenerate() {
                                     className="w-full border-[3px] border-blue-400 rounded-2xl border-dotted py-[50px] text-center"
                                 >
                                     {
-                                        imageList.length == 0 && <>クリックまたはドラッグ＆ドロップ</>
+                                        imageList.length == 0 && <>Click or drag and drop</>
                                     }
 
                                     {imageList.map((image, index) => (

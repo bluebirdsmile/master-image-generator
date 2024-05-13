@@ -21,13 +21,13 @@ function Home() {
     const [resultImage, setResultImage] = useState<string>('');
     const [prompt, setPrompt] = useState('');
     const [accessToken, setAccessToken] = useState<string>('');
-    const [currentModel, setCurrentModel] = useState<string>('');
+    const [currentModel, setCurrentModel] = useState<string>('7b996b6065386c0bc1559a05b756fb2b');
     const intervalIdRef = useRef<any>(null);
     const [lora, setLora] = useState<string>(getRandomLora(''));
     const [count, setCount] = useState<number>(0);
     const [autoKind, setAutoKind] = useState<string>('auction');
 
-
+    console.log(currentModel, "current Modal");
     const getAccessToken = async () => {
 
         const apiUrl = 'https://openapi.seaart.ai/v1/api/auth/token';
